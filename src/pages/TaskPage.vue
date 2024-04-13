@@ -88,7 +88,9 @@ const tasks = ref<Task[]>([]);
 
 async function fetchData() {
   try {
-    const response = await axios.get<Task[]>('http://localhost:3000/task');
+    const response = await axios.get<Task[]>(
+      'https://quasartask.onrender.com/task'
+    );
     tasks.value = { ...response.data };
   } catch (error) {
     console.error('Error fetching users:', error);
@@ -105,7 +107,7 @@ const saveForm = () => {
 
   try {
     axios
-      .post('http://localhost:3000/task', TaskNew)
+      .post('https://quasartask.onrender.com/task', TaskNew)
       .then(() => {
         fetchData();
       })
@@ -128,7 +130,7 @@ const updateItem = async () => {
 
   try {
     const response = await axios.put(
-      'http://localhost:3000/task/' + TaskNew.id,
+      'https://quasartask.onrender.com/task/' + TaskNew.id,
       TaskNew
     );
     if (response.status === 200) {
@@ -144,7 +146,7 @@ const updateItem = async () => {
 const deleteForm = (id: unknown) => {
   try {
     axios
-      .delete('http://localhost:3000/task/' + id)
+      .delete('https://quasartask.onrender.com/task/' + id)
       .then(() => {
         fetchData();
       })

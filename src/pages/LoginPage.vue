@@ -74,7 +74,9 @@ const store = useTokenStore();
 
 async function fetchData() {
   try {
-    const response = await axios.get<Users[]>('http://localhost:3000/users');
+    const response = await axios.get<Users[]>(
+      'https://quasartask.onrender.com/users'
+    );
     users.value.push(...response.data);
   } catch (error) {
     console.error('Error fetching users:', error);

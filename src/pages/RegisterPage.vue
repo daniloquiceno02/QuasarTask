@@ -96,7 +96,10 @@ const accept = ref<boolean>(false);
 async function fetchData(payload: unknown) {
   try {
     const newUser = payload;
-    const response = await axios.post('http://localhost:3000/users', newUser);
+    const response = await axios.post(
+      'https://quasartask.onrender.com/users',
+      newUser
+    );
     console.log(response);
   } catch (error) {
     console.error('Error fetching users:', error);

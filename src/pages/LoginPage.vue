@@ -2,7 +2,11 @@
   <div class="items-center justify-center bg-image q-pa-md full-height">
     <div class="q-pa-md row items-center justify-center">
       <div class="col-12 column items-center">
-        <img src="/src/assets/img/logologin.png" alt="Logo" class="logo" />
+        <img
+          src="https://cdn-icons-png.flaticon.com/256/3237/3237472.png"
+          alt="Logo"
+          class="logo"
+        />
       </div>
       <q-form @submit="onSubmit" ref="LoginForm" class="q-gutter-md">
         <div class="row justify-center">
